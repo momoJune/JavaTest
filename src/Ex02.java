@@ -8,20 +8,18 @@ public class Ex02 {
         String str = sc.next();
         int count = 0;
 
-        ArrayList<String> list = new ArrayList<>(Arrays.asList("c=","dz=","d-","lj","nj","s=","z="));
+        ArrayList<String> list = new ArrayList<>(Arrays.asList("c=","c-", "dz=", "d-", "lj", "nj", "s=", "z="));
 
-        for(int i = 0;i< list.size();i++){
-           if(str.contains(list.get(i))){
-               str = str.replaceFirst(list.get(i), " ");
-               System.out.println("for문 " + (i+1) +"번쨰 :" + list.get(i));
-
-               count++;
-           }
-
+        for (int i = 0; i < list.size(); i++) {
+            while (true){
+                if (str.contains(list.get(i))) {
+                    str = str.replaceFirst(list.get(i), " ");
+                    count++;
+                }else break;
+            }
         }
-        str = str.replaceAll(" ","");
-        System.out.println("str : " + str);
-        count = count + str.length();
-        System.out.println(count);
+            str = str.replaceAll(" ", "");
+            count = count + str.length();
+            System.out.println(count);
     }
 }
